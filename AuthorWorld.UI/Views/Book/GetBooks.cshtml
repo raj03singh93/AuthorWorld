@@ -1,0 +1,75 @@
+﻿@model AddEditBookViewModel
+
+@{
+    ViewData["Title"] = "Book Page";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Book List</h2>
+        </div>
+        <div class="col-6 text-right">
+            <a asp-controller="Book" asp-action="AddEditBook" asp-route-AuthorId="@Model.AuthorId" class="btn btn-primary">
+                <i class="fa fa-plus"></i> &nbsp; Add Book
+            </a>
+        </div>
+    </div>
+
+    <br /><br />
+
+    @if (Model.Books.Count() > 0)
+    {
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Date Published
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var obj in Model.Books)
+                {
+                    <tr>
+                        <td width="20%">@obj.Name</td>
+                        <td width="30%">@obj.Price</td>
+                        <td width="30%">@obj.DatePublished</td>
+                        <td class="text-center">
+                            <div class="w-75 btn-group" role="group">
+                                <a asp-controller="Book" asp-route-Id="@obj.Id" asp-action="AddEditBook" class="btn btn-primary">
+                                    EDIT
+                                </a>
+                                <a asp-controller="Book" asp-route-Id="@obj.Id" asp-action="Delete" data-id="@obj.Id" class="btn btn-danger ml-2 deletebook">
+                                    DELETE
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table> }
+    else
+    {
+        <p> No Author exists.</p>}
+    @section scripts {
+    <script>
+        $(function () {
+            debugger;
+            $(".deletebook").click(function (e) {
+                let confirmation = confirm("Are you sure you want to delete the book ?");
+                if (confirmation === false)
+                    e.preventDefault();
+            })
+        });
+    </script>
+    }
+
+</div>
