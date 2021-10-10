@@ -5,11 +5,13 @@ VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorWorld.UI", "AuthorWorld.UI\AuthorWorld.UI.csproj", "{29C32889-26CD-4936-AEA3-C50E7320EFC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorWorld.Domain.Data", "AuthorWorld.Domain.Data\AuthorWorld.Domain.Data.csproj", "{F34E4866-C190-4947-AD67-135B7B7E60DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorWorld.Domain.Data", "AuthorWorld.Domain.Data\AuthorWorld.Domain.Data.csproj", "{F34E4866-C190-4947-AD67-135B7B7E60DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorWorld.Service", "AuthorWorld.Service\AuthorWorld.Service.csproj", "{DDA44C1A-226D-4BA2-8D2A-F4975067577F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorWorld.Service", "AuthorWorld.Service\AuthorWorld.Service.csproj", "{DDA44C1A-226D-4BA2-8D2A-F4975067577F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorWorld.DTOs", "AuthorWorld.DTOs\AuthorWorld.DTOs.csproj", "{9B1857EA-E85D-47E3-B81D-D24AECA9AEDF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorWorld.DTOs", "AuthorWorld.DTOs\AuthorWorld.DTOs.csproj", "{9B1857EA-E85D-47E3-B81D-D24AECA9AEDF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D15432CF-23E5-4DED-AD79-EB19907B3487}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,6 +38,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{29C32889-26CD-4936-AEA3-C50E7320EFC3} = {D15432CF-23E5-4DED-AD79-EB19907B3487}
+		{F34E4866-C190-4947-AD67-135B7B7E60DA} = {D15432CF-23E5-4DED-AD79-EB19907B3487}
+		{DDA44C1A-226D-4BA2-8D2A-F4975067577F} = {D15432CF-23E5-4DED-AD79-EB19907B3487}
+		{9B1857EA-E85D-47E3-B81D-D24AECA9AEDF} = {D15432CF-23E5-4DED-AD79-EB19907B3487}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8B2DD52A-FF4E-4E30-92BC-A5C7C1386AED}
