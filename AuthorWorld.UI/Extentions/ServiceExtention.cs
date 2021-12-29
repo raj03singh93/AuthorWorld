@@ -6,10 +6,6 @@ using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AuthorWorld.UI.Extentions
 {
@@ -22,6 +18,11 @@ namespace AuthorWorld.UI.Extentions
             services.AddSingleton<IMapper>(mapperConfig.CreateMapper());
 
             //Connect to DB
+            services.AddStackExchangeRedisCache(config => 
+            {
+                config.Configuration = configuration.GetSection("RedisCacheSettings:Configuration").Value;
+                config.InstanceName = configuration.GetSection("RedisCacheSettings:InstanceName").Value; ;
+            });
             services.AddDbContext<AppDbContext>(options => 
             {
                 options.UseSqlServer(configuration.GetConnectionString("DefaultDBConnection"));
